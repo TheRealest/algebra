@@ -1,0 +1,67 @@
+%        File: 2.5.tex
+%     Created: Sat Mar 30 10:00 PM 2024 E
+% Last Change: Sat Mar 30 10:00 PM 2024 E
+%
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+\title{Herstein --- Groups --- Section 2.5 Problems}
+\author{Réal Provencher-Deshler}
+\maketitle
+
+\begin{problem}{1}
+  If $H$ and $K$ are subgroups of $G$, show that $H \cap K$ is a subgroup of $G$.
+\end{problem}
+
+\begin{proof}
+  If $H$ and $K$ are disjoint, $H \cap K = \{e\}$ is a subgroup trivially. Then assume $H \cap K
+  \neq \{e\}$. Let $h \in H \cap K$, so $h \in H$ and $h \in K$. Then $h^{-1} \in H$ and $h^{-1}
+  \in K$. Thus $h^{-1} \in H \cap K$.
+
+Let $a, b \in H \cap K$, so $a, b \in H$ and $a, b \in K$. Because $H$ and $K$ are subgroups, then
+$ab \in H$ and $ab \in K$. Thus $ab \in H \cap K$. So $H \cap K$ is a subgroup of $G$.
+\end{proof}
+
+
+\begin{problem}{2}
+  Let $G$ be a group such that the intersection of all its subgroups which are different from $(e)$
+  is a subgroup different from $(e)$. Prove that every element in G has finite order.
+\end{problem}
+
+\begin{proof}
+  By contrapositive, assume there is an element $g \in G$ such that $(g)$ has infinite order. There
+  will always be such a $g$ that forms a proper subgroup of $G$, since if $(g) = G$, $(g^2)$ is also
+  a subgroup of G with infinite order and does not contain every element of $(g)$. So assume $(g)$
+  is a proper subgroup of $G$.
+
+  Then there must be at least two distinct right cosets of $(g)$ in $G$, since $e \in (g)$ means
+  every element in G is contained in at least one right coset of $(g)$, and if they are all
+  identical then $(g) = G$. Let $(g)x$ and $(g)y$ for $x,y \in G$ be these distinct right cosets.
+  $(g)x \neq (g)y \neq (e)$, but $(g)x \cap (g)y = (e)$.
+\end{proof}
+
+
+\begin{problem}{3}
+  If $G$ has no nontrivial subgroups, show that $G$ must be finite of prime order.
+\end{problem}
+
+\begin{proof}
+  Assume $G$ is infinite. Then there exists $g \in G$ where $(g)$ is a proper subgroup of $G$,
+  because if $(g) = G$ then $(g^2)$ is also a subgroup of $G$ but doesn't contain every element of
+  $(g)$, so it is a nontrivial subgroup of $G$.
+
+  Now assume $G$ has finite composite order, so $o(G)$ can be written $mn$ for some $m,n \in
+  \mathbb{Z}$. If there is no element $g \in G$ such that $(g) = G$, then $(g)$ is a nontrivial
+  subgroup of $G$ for any $g \in G$. Assume $g \in G$ exists such that $(g) = G$. Then $(g^m) \neq G$ and has order
+  $n$, so it is a nontrivial subgroup of $G$.
+\end{proof}
+
+
+
+\end{document}
